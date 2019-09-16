@@ -1,0 +1,31 @@
+{
+  "name": "in_deed_test_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "heroku-postbuild": "cd exam_app && yarn && yarn run build"
+  },
+  "scripts": {
+    "client-install": "yarn install --prefix examp_app",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "exam_app": "yarn start --prefix exam_app",
+    "dev": "concurrently \"yarn run server\" \"yarn run exam_app\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.thoughtworks.net:sriramv/in_deed_test_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.2",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
