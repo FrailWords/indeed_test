@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import quizQuestions from './api/quizQuestions';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 import logo from './svg/logo.svg';
 import './App.css';
+import questions from './api/questionService';
 
 class App extends Component {
   constructor(props) {
@@ -23,6 +24,12 @@ class App extends Component {
   }
 
   componentDidMount() {
+    questions().then((data) => {
+      console.log(data);
+      // this.setState({contacts: data})
+    })
+    .catch(console.log)
+
     const shuffledAnswerOptions = quizQuestions.map(question =>
         this.shuffleArray(question.answers)
     );

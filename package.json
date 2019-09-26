@@ -4,15 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "heroku-postbuild": "cd exam_app && yarn && yarn run build"
-  },
-  "scripts": {
     "client-install": "yarn install --prefix examp_app",
-    "start": "node server.js",
+    "start": "yarn && node server.js",
     "server": "nodemon server.js",
     "exam_app": "yarn start --prefix exam_app",
+    "heroku-postbuild": "cd exam_app && yarn && yarn build",
     "dev": "concurrently \"yarn run server\" \"yarn run exam_app\""
   },
   "repository": {
@@ -23,7 +19,8 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^4.1.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "lowdb": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.2"
